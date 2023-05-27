@@ -23,8 +23,8 @@ const ForgotPassword = () => {
   };
 
   return (
-    <section className="bg-[#242424] py-20 lg:py-[120px]">
-      <div className="container mx-auto">
+    <section className="bg-gray-50 py-20 lg:py-[120px]">
+      <div className="container mx-auto drop-shadow-md">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
@@ -42,6 +42,13 @@ const ForgotPassword = () => {
           md:px-[60px]
         "
             >
+              <div className="mb-10 flex justify-center md:mb-16">
+                <img
+                  src="https://genvirtual.usc.edu.co/posv/logo_acreditacion_Institucional.png"
+                  alt=""
+                  className="img"
+                />
+              </div>
               {status && (
                 <div className="bg-green-700 m-2 p-2 rounded text-white">
                   {status}
@@ -87,8 +94,8 @@ const ForgotPassword = () => {
                     w-full
                     px-4
                     py-3
-                    bg-black
-                    hover:bg-orange-500
+                    bg-[#166DC0]
+                    hover:bg-[#424242]  
                     rounded-md
                     text-white
               "

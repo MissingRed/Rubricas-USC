@@ -13,8 +13,8 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-[#242424] py-20 lg:py-[120px]">
-      <div className="container mx-auto">
+    <section className="bg-gray-50 py-20 lg:py-[120px]">
+      <div className="container mx-auto drop-shadow-md">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
@@ -105,13 +105,14 @@ const Login = () => {
                     w-full
                     px-4
                     py-3
-                    bg-black
-                    hover:bg-orange-500
+                    bg-[#166DC0]
+                    hover:bg-[#424242]
+                    hover:text-white
                     rounded-md
                     text-white
                   "
                   >
-                    Iniciar sesion
+                    Iniciar Sesión
                   </button>
                 </div>
               </form>
@@ -127,7 +128,7 @@ const Login = () => {
                 Olvidaste tu contraseña?
               </Link>
               <p className="text-base text-[#adadad]">
-                No estas registrado?
+                No estas registrado?&nbsp;
                 <Link to="/register" className="text-primary hover:underline">
                   Registrar
                 </Link>

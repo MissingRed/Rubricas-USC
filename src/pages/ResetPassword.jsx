@@ -40,8 +40,8 @@ const ResetPassword = () => {
   };
 
   return (
-    <section className="bg-[#242424] py-20 lg:py-[120px]">
-      <div className="container mx-auto">
+    <section className="bg-gray-50 py-20 lg:py-[120px]">
+      <div className="container mx-auto drop-shadow-md">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
@@ -133,8 +133,8 @@ const ResetPassword = () => {
                     w-full
                     px-4
                     py-3
-                    bg-black
-                    hover:bg-orange-500
+                    bg-[#166DC0]
+                    hover:bg-[#424242] 
                     rounded-md
                     text-white
               "

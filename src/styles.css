@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-font-face {
+@font-face {
   font-family: "InterRegular";
   src: local("Inter"), url(./assets/fonts/Inter-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "InteLight";
+  src: local("Inter"), url(./assets/fonts/Inter-Light.ttf) format("truetype");
 }
 
 @font-face {

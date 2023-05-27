@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import useAuthContext from "../context/AuthContext";
 
 const Register = () => {
@@ -11,12 +12,22 @@ const Register = () => {
 
   const handleRegister = async (event) => {
     event.preventDefault();
+    const emailRegex = /^[A-Za-z0-9._%+-]+@usc\.edu\.co$/;
+    if (!emailRegex.test(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error de validación",
+        text: "Por favor, ingresa un correo electrónico válido de la organización",
+      });
+      return;
+    }
+
     register({ name, email, password, password_confirmation });
   };
 
   return (
-    <section className="bg-[#242424] py-20 lg:py-[120px]">
-      <div className="container mx-auto">
+    <section className="bg-gray-50 py-20 lg:py-[120px]">
+      <div className="container mx-auto drop-shadow-md">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
@@ -34,7 +45,14 @@ const Register = () => {
             md:px-[60px]
           "
             >
-              <div className="mb-10 text-center md:mb-16">
+              <div className="mb-10 flex justify-center md:mb-16">
+                <img
+                  src="https://genvirtual.usc.edu.co/posv/logo_acreditacion_Institucional.png"
+                  alt=""
+                  className="img"
+                />
+              </div>
+              <div className="mb-10 text-center">
                 Obten un cuenta para comenzar a procesar rubricas
               </div>
               <form onSubmit={handleRegister}>
@@ -161,8 +179,8 @@ const Register = () => {
                     w-full
                     px-4
                     py-3
-                    bg-black
-                    hover:bg-orange-500
+                    bg-[#166DC0]
+                    hover:bg-[#424242] 
                     rounded-md
                     text-white
                 "
@@ -172,9 +190,9 @@ const Register = () => {
                 </div>
               </form>
               <p className="text-base text-[#adadad]">
-                ¿Ya eres miembro?
+                ¿Ya eres miembro?&nbsp;
                 <Link to="/login" className="text-primary hover:underline">
-                  Inicia Sesion
+                  Inicia Sesión
                 </Link>
               </p>
             </div>

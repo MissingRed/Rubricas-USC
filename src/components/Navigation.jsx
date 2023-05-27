@@ -5,6 +5,7 @@ import {
   PageNotFound,
   GenerateRubric,
   ModalCreate,
+  ModalSelect,
   CreatedRubric,
 } from "../screens";
 import Navbar from "./Navbar";
@@ -54,10 +55,11 @@ const Navigation = () => {
         <Route element={<AuthLayout />}>
           <Route path="/" element={<HomeScreen />}>
             <Route path="create/:id" element={<ModalCreate />} />
+            <Route path="select" element={<ModalSelect />} />
           </Route>
         </Route>
         <Route path="/rubric" element={<RubricScreen />}>
-          <Route path="generate" element={<GenerateRubric />} />
+          <Route path="generate/:id" element={<GenerateRubric />} />
           <Route path=":id" element={<CreatedRubric />} />
         </Route>
         <Route element={<GuestLayout />}>

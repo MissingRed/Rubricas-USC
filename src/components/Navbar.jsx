@@ -34,15 +34,23 @@ const Navbar = () => {
       position="relative"
     >
       <ToolbarContainer>
-        <Link style={{ textDecoration: "none" }} to="/">
-          <Logo>
-            <span style={{ fontWeight: "normal", fontSize: 14 }}>USC</span>
-            Rubrics
-          </Logo>
-        </Link>
-        <p>Bienvenido {user?.name}</p>
-        <button onClick={logout}>Cerrar Sesión</button>
-        <Button
+        <div className="flex justify-between w-full m-3">
+          <Link style={{ textDecoration: "none" }} to="/">
+            <Logo>
+              <span style={{ fontWeight: "normal", fontSize: 14 }}>USC</span>
+              Rubrics
+            </Logo>
+          </Link>
+          <div className="flex items-center">
+            <p className="text-black">Bienvenido, {user?.name}</p>
+          </div>
+          <button
+            onClick={logout}
+            className="text-black hover:bg-[#166DC0] hover:text-white p-2 rounded-md"
+          >
+            Cerrar Sesión
+          </button>
+          {/* <Button
           onClick={toggleTheme}
           style={{ boxShadow: "none", textTransform: "none" }}
         >
@@ -54,7 +62,8 @@ const Navbar = () => {
           ) : (
             <DarkModeIcon style={{ color: theme.text }} />
           )}
-        </Button>
+        </Button> */}
+        </div>
       </ToolbarContainer>
     </AppBar>
   );
